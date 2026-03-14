@@ -68,31 +68,31 @@
         submitBtn.prop('disabled', true).text('Sending...');
 
         // Perform Fetch
-        fetch('https://api.example.com/careers/apply', { // REPLACE with actual API URL
-            method: 'POST',
-            body: formData,
-            headers: {
-                'Accept': 'application/json'
-                // No need for Content-Type when using FormData; browser sets it automatically with boundary
-            }
-        })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(data => {
-                statusMsg.addClass('text-success').text('Application submitted successfully!').fadeIn();
-                form.trigger('reset');
-            })
-            .catch(error => {
-                console.error('Submission Error:', error);
-                statusMsg.addClass('text-danger').text('There was an error submitting your application. Please try again.').fadeIn();
-            })
-            .finally(() => {
-                submitBtn.prop('disabled', false).text('Submit Application');
-            });
+        // fetch('https://api.example.com/careers/apply', { // REPLACE with actual API URL
+        //     method: 'POST',
+        //     body: formData,
+        //     headers: {
+        //         'Accept': 'application/json'
+        //         // No need for Content-Type when using FormData; browser sets it automatically with boundary
+        //     }
+        // })
+        //     .then(response => {
+        //         if (!response.ok) {
+        //             throw new Error('Network response was not ok');
+        //         }
+        //         return response.json();
+        //     })
+        //     .then(data => {
+        //         statusMsg.addClass('text-success').text('Application submitted successfully!').fadeIn();
+        //         form.trigger('reset');
+        //     })
+        //     .catch(error => {
+        //         console.error('Submission Error:', error);
+        //         statusMsg.addClass('text-danger').text('There was an error submitting your application. Please try again.').fadeIn();
+        //     })
+        //     .finally(() => {
+        //         submitBtn.prop('disabled', false).text('Submit Application');
+        //     });
     });
 
 })(jQuery);
