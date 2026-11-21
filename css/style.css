@@ -172,7 +172,7 @@ h6,
 }
 
 .navbar .navbar-nav .nav-link {
-    margin-right: 35px;
+    margin-right: 0;
     padding: 20px 0;
     color: var(--bs-white);
     font-size: 18px;
@@ -299,8 +299,35 @@ h6,
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1) !important;
 }
 
+.sticky-top > .container,
+.top-utility-bar > .container {
+    max-width: 100% !important;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+@media (min-width: 1400px) {
+    .sticky-top > .container,
+    .top-utility-bar > .container {
+        max-width: 1360px !important;
+    }
+}
+
 .navbar {
     background-color: #ffffff !important;
+    min-height: 72px;
+    height: auto !important;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.navbar .navbar-brand {
+    display: inline-flex;
+    align-items: center;
+    min-width: 0;
+    flex-shrink: 0;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 .navbar .navbar-brand h1 {
@@ -311,10 +338,77 @@ h6,
     color: #6c757d !important;
 }
 
+/*** Brand Inline Name (Single-line Header/Footer) ***/
+.brand-name-inline {
+    font-size: 1.25rem;
+    white-space: nowrap;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+}
+
+.navbar .navbar-brand .brand-name-inline {
+    color: var(--bs-primary) !important;
+}
+
+.footer .navbar-brand .brand-name-inline {
+    color: #ffffff !important;
+}
+
+@media (max-width: 1250px) {
+    .brand-name-inline {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 1100px) {
+    .brand-name-inline {
+        font-size: 1.02rem;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .navbar-brand {
+        max-width: calc(100% - 56px) !important;
+        overflow: hidden;
+    }
+    .brand-name-inline {
+        font-size: 1.05rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .navbar-brand {
+        max-width: calc(100% - 50px) !important;
+    }
+    .brand-name-inline {
+        font-size: 0.88rem;
+    }
+    .navbar-brand img {
+        height: 38px !important;
+    }
+}
+
+@media (max-width: 400px) {
+    .brand-name-inline {
+        font-size: 0.78rem;
+    }
+    .navbar-brand img {
+        height: 34px !important;
+    }
+}
+
+@media (max-width: 340px) {
+    .brand-name-inline {
+        font-size: 0.7rem;
+    }
+}
+
 .navbar .navbar-nav .nav-link {
     color: var(--bs-dark) !important;
     font-weight: 500;
     transition: color 0.2s ease;
+    white-space: nowrap;
+    margin-right: 0 !important;
 }
 
 .navbar .navbar-nav .nav-link:hover,
@@ -324,12 +418,28 @@ h6,
 
 @media (min-width: 992px) {
     .navbar {
-        height: 72px;
+        height: 72px !important;
     }
 
     .navbar .navbar-nav .nav-link {
-        padding: 24px 14px;
+        padding: 24px 8px !important;
+        font-size: 15px;
     }
+}
+
+@media (min-width: 1200px) {
+    .navbar .navbar-nav .nav-link {
+        padding: 24px 12px !important;
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 1350px) {
+    .navbar .navbar-nav .nav-link {
+        padding: 24px 16px !important;
+        font-size: 16px;
+    }
+}
 
     .navbar .nav-item>.dropdown-menu {
         display: block;
@@ -887,34 +997,230 @@ h6,
 /*** Accreditations Marquee / Strip ***/
 .accred-marquee-wrapper {
     background: #ffffff;
-    padding: 20px 0;
+    padding: 24px 0;
     overflow: hidden;
     border-top: 1px solid #eef2f6;
     border-bottom: 1px solid #eef2f6;
 }
 
+.accred-marquee-wrapper:hover .client-carousel {
+    animation-play-state: paused;
+}
+
 .accred-badge-card {
-    background: #F6FAFF;
+    background: #ffffff;
     border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    padding: 12px 22px;
+    border-radius: 14px;
+    padding: 16px 20px 14px 20px;
     display: inline-flex;
+    flex-direction: column;
     align-items: center;
-    gap: 12px;
-    margin: 0 15px;
+    justify-content: center;
+    text-align: center;
+    min-width: 200px;
+    margin: 6px 14px;
     text-decoration: none;
     color: #031B4E;
-    font-weight: 600;
-    font-size: 0.88rem;
-    letter-spacing: 0.02em;
-    transition: all 0.2s ease;
+    box-shadow: 0 3px 10px rgba(3, 27, 78, 0.05);
+    transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.28s ease, border-color 0.28s ease;
     white-space: nowrap;
+    cursor: pointer;
 }
 
 .accred-badge-card:hover {
-    background: #3368C6;
-    color: #ffffff;
+    transform: scale(1.08) translateY(-4px);
+    box-shadow: 0 12px 28px rgba(51, 104, 198, 0.22);
     border-color: #3368C6;
+    background: #ffffff;
+    color: #3368C6;
+}
+
+.accred-badge-img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 10px;
+    padding: 6px;
+    background: #ffffff;
+    border: 1px solid #edf2f7;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+    transition: transform 0.28s ease;
+}
+
+.accred-badge-card:hover .accred-badge-img {
+    transform: scale(1.12);
+}
+
+.accred-badge-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    line-height: 1.3;
+}
+
+.accred-badge-title {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #031B4E;
+    letter-spacing: 0.01em;
+}
+
+.accred-badge-card:hover .accred-badge-title {
+    color: #3368C6;
+}
+
+.accred-badge-sub {
+    font-size: 0.73rem;
+    color: #64748b;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 3px;
+}
+
+.accred-badge-pdf-icon {
+    font-size: 0.78rem;
+    color: #dc2626;
+}
+
+/*** PDF Document Previewer & Metadata Section ***/
+.pdf-viewer-container {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+}
+
+.pdf-viewer-toolbar {
+    background: #031B4E;
+    color: #ffffff;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.pdf-viewer-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #ffffff;
+    margin: 0;
+}
+
+.pdf-viewer-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pdf-frame-wrapper {
+    position: relative;
+    width: 100%;
+    height: 800px;
+    background: #525659;
+}
+
+.pdf-preview-frame {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+.pdf-fallback-banner {
+    background: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 0.85rem;
+    color: #475569;
+}
+
+.cert-meta-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    padding: 24px;
+}
+
+.cert-logo-box {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 16px auto;
+    padding: 8px;
+    border-radius: 16px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cert-logo-box img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.cert-detail-table {
+    margin-bottom: 0;
+}
+
+.cert-detail-table th {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #64748b;
+    width: 38%;
+    padding: 8px 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.cert-detail-table td {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #031B4E;
+    padding: 8px 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.cert-qr-container {
+    background: #f8fafc;
+    border: 1px dashed #cbd5e1;
+    border-radius: 10px;
+    padding: 14px;
+    text-align: center;
+}
+
+.cert-qr-img {
+    width: 95px;
+    height: 95px;
+    object-fit: contain;
+    border-radius: 6px;
+    background: #fff;
+    padding: 4px;
+    border: 1px solid #e2e8f0;
+}
+
+@media (max-width: 768px) {
+    .pdf-frame-wrapper {
+        height: 520px;
+    }
 }
 
 /*** Parameter Chips ***/
