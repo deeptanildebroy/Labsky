@@ -331,11 +331,11 @@ h6,
 }
 
 .navbar .navbar-brand h1 {
-    color: var(--bs-primary) !important;
+    color: #0090CF !important;
 }
 
 .navbar .navbar-brand span {
-    color: #6c757d !important;
+    color: #0090CF !important;
 }
 
 /*** Brand Inline Name (Single-line Header/Footer) ***/
@@ -344,14 +344,20 @@ h6,
     white-space: nowrap;
     letter-spacing: -0.01em;
     line-height: 1.2;
+    color: #0090CF !important;
 }
 
-.navbar .navbar-brand .brand-name-inline {
-    color: var(--bs-primary) !important;
+.navbar .navbar-brand .brand-name-inline,
+.navbar .navbar-brand h1.brand-name-inline {
+    color: #0090CF !important;
 }
 
-.footer .navbar-brand .brand-name-inline {
-    color: #ffffff !important;
+.footer .navbar-brand .brand-name-inline,
+.footer .navbar-brand .brand-name-inline span,
+.footer .navbar-brand h2,
+.footer .navbar-brand h3,
+.footer .navbar-brand h4 {
+    color: #0090CF !important;
 }
 
 @media (max-width: 1250px) {
