@@ -340,7 +340,7 @@ h6,
 
 /*** Brand Inline Name (Single-line Header/Footer) ***/
 .brand-name-inline {
-    font-size: 1.25rem;
+    font-size: 1.45rem;
     white-space: nowrap;
     letter-spacing: -0.01em;
     line-height: 1.2;
@@ -358,17 +358,18 @@ h6,
 .footer .navbar-brand h3,
 .footer .navbar-brand h4 {
     color: #0090CF !important;
+    font-size: 1.5rem;
 }
 
 @media (max-width: 1250px) {
     .brand-name-inline {
-        font-size: 1.1rem;
+        font-size: 1.22rem;
     }
 }
 
 @media (max-width: 1100px) {
     .brand-name-inline {
-        font-size: 1.02rem;
+        font-size: 1.12rem;
     }
 }
 
@@ -378,7 +379,10 @@ h6,
         overflow: hidden;
     }
     .brand-name-inline {
-        font-size: 1.05rem;
+        font-size: 1.15rem;
+    }
+    .footer .navbar-brand .brand-name-inline {
+        font-size: 1.3rem;
     }
 }
 
@@ -387,7 +391,10 @@ h6,
         max-width: calc(100% - 50px) !important;
     }
     .brand-name-inline {
-        font-size: 0.88rem;
+        font-size: 0.98rem;
+    }
+    .footer .navbar-brand .brand-name-inline {
+        font-size: 1.15rem;
     }
     .navbar-brand img {
         height: 38px !important;
@@ -396,7 +403,10 @@ h6,
 
 @media (max-width: 400px) {
     .brand-name-inline {
-        font-size: 0.78rem;
+        font-size: 0.88rem;
+    }
+    .footer .navbar-brand .brand-name-inline {
+        font-size: 1.05rem;
     }
     .navbar-brand img {
         height: 34px !important;
@@ -405,7 +415,10 @@ h6,
 
 @media (max-width: 340px) {
     .brand-name-inline {
-        font-size: 0.7rem;
+        font-size: 0.78rem;
+    }
+    .footer .navbar-brand .brand-name-inline {
+        font-size: 0.95rem;
     }
 }
 
